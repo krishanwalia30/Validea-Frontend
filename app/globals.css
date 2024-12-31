@@ -3,19 +3,176 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f9e9d1;
+  --foreground: #f9e9d1;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #f9e9d1;
+    --foreground: #f9e9d1;
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+
+  /* Font Properties */
+  font-family: "Bricolage Grotesque";
+  color: #545454;
+  font-size: 18px;
+}
+
+h1 {
+  font-family: "Bricolage Grotesque";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 66px;
+  line-height: 73px;
+  color: #3d3d3d;
+  text-align: center;
+}
+
+h2 {
+  /* Introduction */
+
+  font-family: "Bricolage Grotesque";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
+  /* line-height: 84px; */
+  /* identical to box height */
+  text-align: left;
+  text-decoration-line: underline;
+
+  color: #3d3d3d;
+}
+
+h3 {
+  /* Overview */
+
+  /* position: absolute;
+width: 277px;
+height: 72px;
+left: 131px; */
+  /* top: 1426px; */
+
+  font-family: "Bricolage Grotesque";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  /* line-height: 52px; */
+  /* identical to box height */
+  text-align: left;
+
+  color: #3d3d3d;
+}
+
+h4 {
+  font-family: "Bricolage Grotesque";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 19px;
+  /* line-height: 58px; */
+  /* identical to box height */
+  /* display: flex; */
+  align-items: center;
+  text-align: center;
+
+  color: #3d3d3d;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+h5 {
+  /* position: absolute;
+width: 1658px;
+height: 201px;
+left: calc(50% - 1658px/2);
+top: 1498px; */
+
+  font-family: "Bricolage Grotesque";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 38px;
+
+  color: #000000;
+}
+.separator-line {
+  /* position: absolute; */
+  /* width: 1658px; */
+  height: 15px;
+  /* left: 134px; */
+
+  background: #818181;
+}
+
+@layer utilities {
+}
+
+.cta-button {
+  /* Validate Your Idea Now No Login/Signup Required* */
+
+  /* font-family: "Bricolage Grotesque"; */
+  /* font-style: normal; */
+  /* font-size: 48px; */
+  /* line-height: 58px; */
+  /* display: flex; */
+  /* align-items: center; */
+  text-align: center;
+
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 22px;
+
+  /* Rectangle 7 */
+
+  /* position: absolute; */
+  /* width: 592px; */
+  /* height: 108px; */
+  /* left: 182px;
+top: 815px; */
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  background: #ff5100;
+  border-radius: 8px;
+}
+
+.keyfeatures-card {
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-bottom: 1rem;
+  border-radius: 10px;
+  background: #ffffff;
+
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+  max-width: 450px;
+  padding-top: 2rem;
+  align-items: center;
+  text-align: center;
+}
+
+.keyfeatures-grid {
+  row-gap: 30px;
+  column-gap: 60px;
 }
