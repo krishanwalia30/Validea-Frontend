@@ -4,14 +4,10 @@ import {
   Body,
   Container,
   Head,
-  Heading,
   Html,
   Img,
   Tailwind,
-  Text,
   Markdown,
-  Link,
-  Column,
 } from "@react-email/components";
 
 const Email = ({ markdownContent }) => {

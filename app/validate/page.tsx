@@ -1,5 +1,5 @@
 "use client";
-import React, { FormEvent, use, useState } from "react";
+import React, { FormEvent, useState } from "react";
 
 const ValidationPage = () => {
   const [formData, setFormData] = useState({
@@ -70,15 +70,16 @@ const ValidationPage = () => {
         },
         body: JSON.stringify({ ...formData, email }),
       });
-
       if (response.ok) {
         alert(
-          "✨ Your Market Research Report is Taking Flight! ✨\n\nCheck your inbox (and spam folder) for a treasure trove of insights. 💎\n\nWe'd love to hear your thoughts on making Validea even better! 💫"
+          "✨ Your Market Research Report is Taking Flight! ✨\n\nCheck your inbox (and spam folder) for a treasure trove of insights. 💎\n\nWe&apos;d love to hear your thoughts on making Validea even better! 💫"
         );
+        window.location.href = "/";
       } else {
         alert(
-          "🚨 Houston, we have a hiccup! 🌟\nOur digital carrier pigeon seems to have taken a detour. Let's give it another shot in a moment! 🚀✨"
+          "🚨 Houston, we have a hiccup! 🌟\nOur digital carrier pigeon seems to have taken a detour. Let&apos;s give it another shot in a moment! 🚀✨"
         );
+        window.location.href = "/";
       }
       // Reset all states
       setFormData({ title: "", description: "" });
@@ -94,7 +95,7 @@ const ValidationPage = () => {
 
   return (
     <div>
-      <h1 className="mt-8">Let's Validate Your Idea</h1>
+      <h1 className="mt-8">Let&apos;s Validate Your Idea</h1>
       <div className="bg-[#FCF3E1] rounded-2xl py-8 m-auto max-w-fit px-4 my-4">
         {!showProgress && !showEmailForm && (
           <form
@@ -173,7 +174,7 @@ const ValidationPage = () => {
           >
             <h4>
               Ready for some market-crushing insights? 🚀 <br />
-              Drop your email below and let's make magic happen!
+              Drop your email below and let&apos;s make magic happen!
             </h4>
             <div className="flex flex-col gap-2">
               <label htmlFor="email" className="text-lg font-semibold">
@@ -187,6 +188,7 @@ const ValidationPage = () => {
                 className="p-3 border border-gray-300 focus:outline-none focus:border-[#FF5100] text-[#3d3d3d] bg-[#F9E0BB] rounded-xl"
                 placeholder="Enter your email address"
                 required
+                disabled={submitting}
               />
             </div>
             {submitting ? (

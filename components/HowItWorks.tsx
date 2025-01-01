@@ -1,5 +1,4 @@
 import HeroVideoDialog from "./ui/hero-video-dialog";
-import Safari from "./ui/safari";
 
 export function SafariDemo() {
   return (

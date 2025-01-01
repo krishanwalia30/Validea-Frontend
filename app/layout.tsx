@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Bricolage_Grotesque } from "next/font/google";
+import { Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 const bricolageGrotesqueFont = Bricolage_Grotesque({
   variable: "--font-bricolage-sans",
@@ -12,7 +11,7 @@ const bricolageGrotesqueFont = Bricolage_Grotesque({
 export const metadata: Metadata = {
   title: "Validea",
   description: "Idea Validation Tool",
-  icons: "/favicon.png",
+  icons: "favicon.png",
 };
 
 export default function RootLayout({
@@ -25,7 +24,6 @@ export default function RootLayout({
       <body className={`${bricolageGrotesqueFont.variable} antialiased`}>
         <Navbar />
         {children}
-        
       </body>
     </html>
   );

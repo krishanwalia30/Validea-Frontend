@@ -8,7 +8,7 @@ export async function GET() {
     const count = await DataModel.countDocuments();
 
     return Response.json({ count });
-  } catch (error) {
-    return Response.json({ error: "Failed to get count" }, { status: 500 });
+  } catch (err) {
+    return Response.json({ error: err }, { status: 500 });
   }
 }
