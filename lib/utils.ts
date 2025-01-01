@@ -19,3 +19,11 @@ export async function fetchCount() {
     return 99;
   }
 }
+
+export const getBaseUrl = () => {
+  if (process.env.NEXT_PUBLIC_BASE_URL) {
+    return process.env.NEXT_PUBLIC_BASE_URL;
+  }
+  // Fallback for development
+  return `http://localhost:3000`;
+};

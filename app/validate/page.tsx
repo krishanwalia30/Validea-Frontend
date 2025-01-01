@@ -1,5 +1,6 @@
 "use client";
 import React, { FormEvent, useState } from "react";
+import { getBaseUrl } from "@/lib/utils";
 
 const ValidationPage = () => {
   const [formData, setFormData] = useState({
@@ -63,7 +64,7 @@ const ValidationPage = () => {
     }, interval);
 
     try {
-      const response = await fetch("/api/send", {
+      const response = await fetch(`${getBaseUrl()}/api/send`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -77,7 +78,7 @@ const ValidationPage = () => {
         window.location.href = "/";
       } else {
         alert(
-          "🚨 Houston, we have a hiccup! 🌟\nOur digital carrier pigeon seems to have taken a detour. Let&apos;s give it another shot in a moment! 🚀✨"
+          "🚨 Houston, we have a hiccup! 🌟\nOur digital carrier pigeon seems to have taken a detour. Lets give it another shot in a moment! 🚀✨"
         );
         window.location.href = "/";
       }
