@@ -27,19 +27,46 @@ export async function POST(request: Request) {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Accept": "application/json"
         },
         body: JSON.stringify({ topic: title, description: description }),
       }
     );
 
-    const data = await response.json();
+    // Add error handling for non-200 responses
+    if (!response.ok) {
+      console.error("API Error:", {
+        status: response.status,
+        statusText: response.statusText,
+        text: await response.text()
+      });
+      return Response.json(
+        { error: "Failed to get market research" },
+        { status: response.status }
+      );
+    }
+
+    // Add error handling for JSON parsing
+    let data;
+    try {
+      data = await response.json();
+    } catch (parseError) {
+      console.error("JSON Parse Error:", parseError);
+      const responseText = await response.text();
+      console.error("Raw Response:", responseText);
+      return Response.json(
+        { error: "Invalid response from market research API" },
+        { status: 500 }
+      );
+    }
+
     console.log("API Response:", data);
     const markdownContent = data.market_research;
     // const markdownContent = "# Hello from Validea";
 
     if (!markdownContent) {
       return Response.json(
-        { error: "Failed to generate market research" },
+        { error: "No market research content received" },
         { status: 500 }
       );
     }
