@@ -2,6 +2,27 @@
 import React, { FormEvent, useState } from "react";
 import { getBaseUrl } from "@/lib/utils";
 
+const fetchWithTimeout = async (
+  url: string,
+  options: RequestInit,
+  timeout: number = 60000
+) => {
+  const controller = new AbortController();
+  const signal = controller.signal;
+  options.signal = signal;
+
+  const fetchPromise = fetch(url, options);
+
+  const timeoutPromise = new Promise((_, reject) => {
+    const timeoutId = setTimeout(() => {
+      controller.abort();
+      reject(new Error("Request timed out"));
+    }, timeout);
+  });
+
+  return Promise.race([fetchPromise, timeoutPromise]);
+};
+
 const ValidationPage = () => {
   const [formData, setFormData] = useState({
     title: "",
@@ -64,7 +85,7 @@ const ValidationPage = () => {
     }, interval);
 
     try {
-      const response = await fetch(`${getBaseUrl()}/api/send`, {
+      const response = await fetchWithTimeout(`${getBaseUrl()}/api/send`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
