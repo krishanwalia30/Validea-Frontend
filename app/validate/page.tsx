@@ -14,7 +14,7 @@ const fetchWithTimeout = async (
   const fetchPromise = fetch(url, options);
 
   const timeoutPromise = new Promise((_, reject) => {
-    const timeoutId = setTimeout(() => {
+    setTimeout(() => {
       controller.abort();
       reject(new Error("Request timed out"));
     }, timeout);
