@@ -11,7 +11,7 @@ const bricolageGrotesqueFont = Bricolage_Grotesque({
 export const metadata: Metadata = {
   title: "Validea",
   description: "Idea Validation Tool",
-  icons: "favicon.png",
+  icons: { icon: "favicon.png" },
 };
 
 export default function RootLayout({
