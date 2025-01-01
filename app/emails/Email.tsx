@@ -10,7 +10,7 @@ import {
   Markdown,
 } from "@react-email/components";
 
-const Email = ({ markdownContent }) => {
+const Email = ({ markdownContent }: { markdownContent: string }) => {
   // const baseUrl = process.env.VERCEL_URL
   //   ? `https://${process.env.VERCEL_URL}`
   //   : "";
