@@ -31,7 +31,7 @@ async function dbConnect(): Promise<void> {
   } catch (error) {
     console.error("Database connection failed: ", error);
     // Don't exit the process, instead throw the error to be handled by the API route
-    throw new Error(`Unable to connect to MongoDB: ${error.message}`);
+    throw new Error(`Unable to connect to MongoDB: ${(error as Error).message}`);
   }
 }
 
