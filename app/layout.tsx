@@ -10,7 +10,8 @@ const bricolageGrotesqueFont = Bricolage_Grotesque({
 
 export const metadata: Metadata = {
   title: "Validea",
-  description: "Idea Validation Tool",
+  description:
+    "Transform your ideas into validated business opportunities with AI-powered market research and instant feedback",
   icons: { icon: "favicon.png" },
 };
 
