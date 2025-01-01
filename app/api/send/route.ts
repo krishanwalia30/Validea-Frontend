@@ -35,10 +35,10 @@ export async function POST(request: Request) {
     console.log("THE BACKEND API IS CORRECTLY WORKING")
 
     const data = await response.json();
-    console.log("API Response:", data);
+    // console.log("API Response:", data);
 
     const markdownContent = data.market_research;
-    console.log(markdownContent);
+    // console.log(markdownContent);
     // const markdownContent = "# Hello from Validea";
 
     if (!markdownContent) {
