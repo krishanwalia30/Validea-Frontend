@@ -21,6 +21,11 @@ export async function fetchCount() {
 }
 
 export const getBaseUrl = () => {
+  // For Netlify deployments
+  if (process.env.URL || process.env.DEPLOY_URL) {
+    return process.env.URL || process.env.DEPLOY_URL;
+  }
+  // For local development
   if (process.env.NEXT_PUBLIC_BASE_URL) {
     return process.env.NEXT_PUBLIC_BASE_URL;
   }
