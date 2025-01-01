@@ -27,46 +27,23 @@ export async function POST(request: Request) {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Accept": "application/json"
         },
         body: JSON.stringify({ topic: title, description: description }),
       }
     );
 
-    // Add error handling for non-200 responses
-    if (!response.ok) {
-      console.error("API Error:", {
-        status: response.status,
-        statusText: response.statusText,
-        text: await response.text()
-      });
-      return Response.json(
-        { error: "Failed to get market research" },
-        { status: response.status }
-      );
-    }
+    console.log("THE BACKEND API IS CORRECTLY WORKING")
 
-    // Add error handling for JSON parsing
-    let data;
-    try {
-      data = await response.json();
-    } catch (parseError) {
-      console.error("JSON Parse Error:", parseError);
-      const responseText = await response.text();
-      console.error("Raw Response:", responseText);
-      return Response.json(
-        { error: "Invalid response from market research API" },
-        { status: 500 }
-      );
-    }
-
+    const data = await response.json();
     console.log("API Response:", data);
+
     const markdownContent = data.market_research;
+    console.log(markdownContent);
     // const markdownContent = "# Hello from Validea";
 
     if (!markdownContent) {
       return Response.json(
-        { error: "No market research content received" },
+        { error: "Failed to generate market research" },
         { status: 500 }
       );
     }
