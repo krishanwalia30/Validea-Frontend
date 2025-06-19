@@ -43,13 +43,9 @@ Traditional market research is time-consuming, expensive, and often yields outda
 - **Business Analysts**: Conduct comprehensive market research
 - **Executive Teams**: Make informed strategic decisions
 
-## 🚀 Getting Started
+<!-- ## 🚀 Getting Started -->
 
-### Prerequisites
+<!-- ### Prerequisites
 - Node.js 16.x or higher
-- MongoDB
-- API keys for various data sources
-
-### Installation
-
-1. Clone the repository:
+- MongoDB -->
+<!-- - API keys for various data sources -->
