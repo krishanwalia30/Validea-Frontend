@@ -16,7 +16,7 @@ export async function fetchCount() {
     }
   } catch (error) {
     console.error("Error fetching count:", error);
-    return 99;
+    return 99; // This will be the default count - Return 99 if the count is not available
   }
 }
 
@@ -29,6 +29,6 @@ export const getBaseUrl = () => {
   if (process.env.NEXT_PUBLIC_BASE_URL) {
     return process.env.NEXT_PUBLIC_BASE_URL;
   }
-  // Fallback for development
+  // Fallback for development 
   return `http://localhost:3000`;
-};
+}; 
