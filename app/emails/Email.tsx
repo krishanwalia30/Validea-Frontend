@@ -26,12 +26,6 @@ const Email = ({ markdownContent }: { markdownContent: string }) => {
               className="w-full"
             />
 
-            {/* <Heading className="text-xl pt-4">Hello there 👋</Heading>
-            <Text className="text-lg font-medium">
-              Thanks fro joining me on this journey, check out some courses down
-              here below.
-            </Text> */}
-
             <Markdown
               markdownCustomStyles={{
                 h1: {
